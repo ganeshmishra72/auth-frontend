@@ -3,14 +3,14 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import useAuth from '@/auth/store'
-import { redirect } from 'next/navigation'
+import {  useRouter } from 'next/navigation'
 
 type LayoutPros={
   children:React.ReactNode
 }
 
 const Layout = ({children}:LayoutPros) => {
-
+  const navigate=useRouter()
   const [sildBar,setSlidBar]=useState(false)
 
   const [isMenu,setMenu]=useState(true)
@@ -18,6 +18,12 @@ const Layout = ({children}:LayoutPros) => {
    const userData=useAuth(state=>state.user)
    const logout=useAuth(s=>s.logout)
      
+   const handelLogout=()=>{
+      logout()
+  setSlidBar(false)
+  setMenu(true)
+  navigate.push("/")
+   }
    
    const [mounted, setMounted] = useState(false)
 
@@ -41,7 +47,7 @@ const Layout = ({children}:LayoutPros) => {
           checkLogin() ?
           <>
           <Link href={"/dashboard/profile"}>{userData?.name}</Link>
-        <Button onClick={()=>{logout(),redirect("/")}} size={"sm"} className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Logout</Button>
+        <Button onClick={handelLogout} size={"sm"} className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Logout</Button>
         </>:
 
            <>
@@ -86,7 +92,7 @@ const Layout = ({children}:LayoutPros) => {
           
         <Link href={"/dashboard/profile"} onClick={()=>{setSlidBar(false),setMenu(true)}}>{userData?.name}</Link>
         
-        <Button onClick={()=>{logout(), redirect("/") ,setSlidBar(false)}} size={"sm"}  className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Logout</Button>
+        <Button onClick={handelLogout} size={"sm"}  className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Logout</Button>
        
           </>
           :
