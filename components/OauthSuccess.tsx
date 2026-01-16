@@ -31,7 +31,7 @@ const OauthSuccess = () => {
        } catch (error) {
         console.log(error);
         toast.error("Login Failed")
-        
+
        }
        finally{
         setRefresh(false)

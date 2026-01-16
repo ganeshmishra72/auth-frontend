@@ -84,7 +84,7 @@ const Layout = ({children}:LayoutPros) => {
           checkLogin()?
           <>
           
-        <Link href={"/dashboard/home"} onClick={()=>{setSlidBar(false),setMenu(true)}}>{userData?.name}</Link>
+        <Link href={"/dashboard/profile"} onClick={()=>{setSlidBar(false),setMenu(true)}}>{userData?.name}</Link>
         
         <Button onClick={()=>{logout(),redirect("/")}} size={"sm"}  className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Logout</Button>
        
