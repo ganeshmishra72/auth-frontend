@@ -50,7 +50,7 @@ const Layout = ({children}:LayoutPros) => {
         <Button size={"sm"} className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Login</Button>
         </Link>
         <Link href={"/singup"} className='text-black'>
-        <Button  size={"sm"} className='cursor-pointer   hover:bg-transparent hover:text-white transition-all' variant={"outline"}>Singup</Button>
+        <Button  size={"sm"} className='cursor-pointer   hover:bg-transparent hover:text-white transition-all' variant={"outline"}>Sign Up</Button>
         </Link>
         </>
         }
@@ -96,7 +96,7 @@ const Layout = ({children}:LayoutPros) => {
         <Button size={"sm"}  className='cursor-pointer bg-transparent  hover:bg-white hover:text-violet-950 transition-all' variant={"outline"}>Login</Button>
         </Link>
         <Link href={"/singup"} className='text-black'onClick={()=>{setSlidBar(false),setMenu(true)}}>
-        <Button  size={"sm"} className='cursor-pointer   hover:bg-transparent hover:text-white transition-all' variant={"outline"}>Singup</Button>
+        <Button  size={"sm"} className='cursor-pointer   hover:bg-transparent hover:text-white transition-all' variant={"outline"}>Sign Up</Button>
         </Link>
           </>
 

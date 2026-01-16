@@ -59,7 +59,7 @@ const Login = () => {
          navigate.push("/")
        
      } catch (error) {
-       console.log(error);
+      
        setError(error)
        toast.error("Error In Login User!!")
        

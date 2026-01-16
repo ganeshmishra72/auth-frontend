@@ -70,7 +70,7 @@ const Singup = () => {
                   try {
                     setLoding(true)
                     const result=await registerUser(fromData);
-                    console.log(result);
+                
                     
                     toast.success("user register successfully!!")
                     setFromData({

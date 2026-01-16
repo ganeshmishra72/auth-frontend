@@ -43,12 +43,11 @@ apiClient.interceptors.response.use(
   (response)=>response,
   // error 
   async(error)=>{
-    console.log(error);
+   
     
 const is401 = error?.response?.status === 401;
  const original=error.config
-     console.log(original);
-    console.log("original retry: ", original._retry);
+      
  if(!is401  || original._retry){
   // message
   return Promise.reject(error)
